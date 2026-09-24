@@ -21,4 +21,3 @@ int	ft_print_unsigned(unsigned int nb)
 	ft_print_char(c);
 	return (ft_numlen(nb));
 }
-

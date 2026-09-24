@@ -19,8 +19,8 @@ int	ft_print_str(char *str)
 	i = 0;
 	while(str[i])
 	{
-		ft_print_ch(str[i]);
+		ft_print_char(str[i]);
 		i++;
 	}
-	return (1);
+	return (i);
 }

@@ -15,21 +15,28 @@
 int	ft_print_nbr(int nb)
 {
 	char	c;
+	int			x;
 
-	if (n == -2147483648)
+	x = 1;
+	if (nb == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	if (n < 0)
+	if (nb < 0)
 	{
-		n *= -1;
-		write(fd, "-", 1);
+		nb *= -1;
+		x = -1;
+		ft_print_char('-');
 	}
-	if (n > 9)
-		ft_print_nbr(n / 10, fd);
+	if (nb > 9)
+		ft_print_nbr(nb / 10);
 	
-	c = (n % 10) + '0';
+	c = (nb % 10) + '0';
 	ft_print_char(c);
-	return (ft_numlen(n));
+	if (x != 1)
+	{
+		return(ft_numlen(nb) + 1);
+	}
+	return (ft_numlen(nb));
 }
